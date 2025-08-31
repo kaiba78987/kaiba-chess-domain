@@ -1,0 +1,52 @@
+package com.ebastonblanco.chess.domain.common
+
+final case class Coordinate(file: File, rank: Rank):
+
+  override def toString = file.representation + rank.representation
+
+  def north: Option[Coordinate] =
+    rank.next match
+      case Some(r) => Some(new Coordinate(file, r))
+      case None    => None
+
+  def south: Option[Coordinate] =
+    rank.previous match
+      case Some(r) => Some(new Coordinate(file, r))
+      case None    => None
+
+  def east: Option[Coordinate] =
+    file.next match
+      case Some(f) => Some(new Coordinate(f, rank))
+      case None    => None
+
+  def west: Option[Coordinate] =
+    file.previous match
+      case Some(f) => Some(new Coordinate(f, rank))
+      case None    => None
+
+  def northEast: Option[Coordinate] =
+    (file.next, rank.next) match
+      case (Some(f), Some(r)) => Some(new Coordinate(f, r))
+      case _                  => None
+
+  def northWest: Option[Coordinate] =
+    (file.previous, rank.next) match
+      case (Some(f), Some(r)) => Some(new Coordinate(f, r))
+      case _                  => None
+
+  def southEast: Option[Coordinate] =
+    (file.next, rank.previous) match
+      case (Some(f), Some(r)) => Some(new Coordinate(f, r))
+      case _                  => None
+
+  def southWest: Option[Coordinate] =
+    (file.previous, rank.previous) match
+      case (Some(f), Some(r)) => Some(new Coordinate(f, r))
+      case _                  => None
+
+object Coordinate:
+
+  def apply(representation: String): Coordinate =
+    if representation.length != 2 then
+      throw new IllegalArgumentException("Coordinate length must be 2.")
+    else new Coordinate(File(representation(0)), Rank(representation(1)))
