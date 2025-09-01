@@ -1,14 +1,14 @@
 package com.ebastonblanco.chess.domain.common
 
-enum File(val representation: String):
-  case A extends File("a")
-  case B extends File("b")
-  case C extends File("c")
-  case D extends File("d")
-  case E extends File("e")
-  case F extends File("f")
-  case G extends File("g")
-  case H extends File("h")
+enum File(val representation: Char):
+  case A extends File('a')
+  case B extends File('b')
+  case C extends File('c')
+  case D extends File('d')
+  case E extends File('e')
+  case F extends File('f')
+  case G extends File('g')
+  case H extends File('h')
 
   def previous: Option[File] =
     val prevOrdinal = this.ordinal - 1

@@ -2,7 +2,7 @@ package com.ebastonblanco.chess.domain.common
 
 final case class Coordinate(file: File, rank: Rank):
 
-  override def toString = file.representation + rank.representation
+  override def toString = s"${file.representation}${rank.representation}"
 
   def north: Option[Coordinate] =
     rank.next match
@@ -49,4 +49,4 @@ object Coordinate:
   def apply(representation: String): Coordinate =
     if representation.length != 2 then
       throw new IllegalArgumentException("Coordinate length must be 2.")
-    else new Coordinate(File(representation(0)), Rank(representation(1)))
+    else Coordinate(File(representation(0)), Rank(representation(1)))

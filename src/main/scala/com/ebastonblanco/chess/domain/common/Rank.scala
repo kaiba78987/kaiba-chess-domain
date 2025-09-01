@@ -1,14 +1,14 @@
 package com.ebastonblanco.chess.domain.common
 
-enum Rank(val representation: String):
-  case Rank1 extends Rank("1")
-  case Rank2 extends Rank("2")
-  case Rank3 extends Rank("3")
-  case Rank4 extends Rank("4")
-  case Rank5 extends Rank("5")
-  case Rank6 extends Rank("6")
-  case Rank7 extends Rank("7")
-  case Rank8 extends Rank("8")
+enum Rank(val representation: Char):
+  case Rank1 extends Rank('1')
+  case Rank2 extends Rank('2')
+  case Rank3 extends Rank('3')
+  case Rank4 extends Rank('4')
+  case Rank5 extends Rank('5')
+  case Rank6 extends Rank('6')
+  case Rank7 extends Rank('7')
+  case Rank8 extends Rank('8')
 
   def previous: Option[Rank] =
     val prevOrdinal = this.ordinal - 1
