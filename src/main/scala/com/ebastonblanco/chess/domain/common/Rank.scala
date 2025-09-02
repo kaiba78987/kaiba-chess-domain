@@ -1,6 +1,6 @@
 package com.ebastonblanco.chess.domain.common
 
-enum Rank(val representation: Char):
+enum Rank(val representation: Char) extends Enum[Rank] with NavigableEnum[Rank]:
   case Rank1 extends Rank('1')
   case Rank2 extends Rank('2')
   case Rank3 extends Rank('3')
@@ -10,18 +10,10 @@ enum Rank(val representation: Char):
   case Rank7 extends Rank('7')
   case Rank8 extends Rank('8')
 
-  def previous: Option[Rank] =
-    val prevOrdinal = this.ordinal - 1
-    if prevOrdinal >= 0 then Some(Rank.fromOrdinal(prevOrdinal))
-    else None
-
-  def next: Option[Rank] =
-    val nextOrdinal = this.ordinal + 1
-    if nextOrdinal < Rank.values.length then Some(Rank.fromOrdinal(nextOrdinal))
-    else None
+  def previous: Option[Rank] = super.previous(using Rank.values)
+  def next: Option[Rank] = super.next(using Rank.values)
 
 object Rank:
-
   def apply(representation: Char): Rank =
     representation match
       case '1' => Rank1

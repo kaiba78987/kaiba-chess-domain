@@ -1,6 +1,6 @@
 package com.ebastonblanco.chess.domain.common
 
-enum File(val representation: Char):
+enum File(val representation: Char) extends Enum[File] with NavigableEnum[File]:
   case A extends File('a')
   case B extends File('b')
   case C extends File('c')
@@ -10,18 +10,10 @@ enum File(val representation: Char):
   case G extends File('g')
   case H extends File('h')
 
-  def previous: Option[File] =
-    val prevOrdinal = this.ordinal - 1
-    if prevOrdinal >= 0 then Some(File.fromOrdinal(prevOrdinal))
-    else None
-
-  def next: Option[File] =
-    val nextOrdinal = this.ordinal + 1
-    if nextOrdinal < File.values.length then Some(File.fromOrdinal(nextOrdinal))
-    else None
+  def previous: Option[File] = super.previous(using File.values)
+  def next: Option[File] = super.next(using File.values)
 
 object File:
-
   def apply(representation: Char): File =
     representation match
       case 'a' => A
