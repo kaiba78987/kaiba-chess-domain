@@ -46,6 +46,20 @@ final case class Coordinate(file: File, rank: Rank):
 
 object Coordinate:
 
+  enum Direction:
+    case North, South, East, West, NorthEast, NorthWest, SouthEast, SouthWest
+
+  def navigate(coordinate: Coordinate, direction: Direction): Option[Coordinate] =
+    direction match
+      case Direction.North     => coordinate.north
+      case Direction.South     => coordinate.south
+      case Direction.East      => coordinate.east
+      case Direction.West      => coordinate.west
+      case Direction.NorthEast => coordinate.northEast
+      case Direction.NorthWest => coordinate.northWest
+      case Direction.SouthEast => coordinate.southEast
+      case Direction.SouthWest => coordinate.southWest
+
   def apply(representation: String): Coordinate =
     if representation.length != 2 then
       throw new IllegalArgumentException("Coordinate length must be 2.")
