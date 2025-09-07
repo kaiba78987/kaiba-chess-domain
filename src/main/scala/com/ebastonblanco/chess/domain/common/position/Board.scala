@@ -7,9 +7,9 @@ import com.ebastonblanco.chess.domain.common.Color
 
 trait Board:
 
-  def apply(coordinate: Coordinate): Piece
+  def apply(coordinate: Coordinate): Option[Piece]
 
-  def update(coordinate: Coordinate, piece: Piece): Board
+  def update(coordinate: Coordinate, piece: Option[Piece]): Board
 
   def getPieces(side: Color): Set[(Coordinate, Piece)]
 

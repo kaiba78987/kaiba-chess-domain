@@ -2,7 +2,7 @@ package com.ebastonblanco.chess.domain.common.position
 
 import scala.collection.BitSet
 
-class CastlingAvailability private (private val availableCastlings: BitSet):
+final case class CastlingAvailability private (private val availableCastlings: BitSet):
 
     def +(castling: Castling): CastlingAvailability = new CastlingAvailability(availableCastlings + castling.ordinal)
 
