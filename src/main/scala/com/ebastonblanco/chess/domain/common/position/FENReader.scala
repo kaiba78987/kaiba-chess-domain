@@ -1,8 +1,5 @@
 package com.ebastonblanco.chess.domain.common.position
 
-trait FenRepresentable[T]:
-  
-  def toFen: String
+trait FENReader[T]:
 
   def fromFen(fen: String): T
-
