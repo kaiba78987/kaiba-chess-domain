@@ -1,10 +1,10 @@
-package com.ebastonblanco.chess.domain.common.pieces
+package com.github.kaiba78987.kaibachess.domain.common.pieces
 
-import com.ebastonblanco.chess.domain.common.Color
-import com.ebastonblanco.chess.domain.common.movement.Move
-import com.ebastonblanco.chess.domain.common.position.Position
-import com.ebastonblanco.chess.domain.common.position.FENReader
-import com.ebastonblanco.chess.domain.common.position.FenWritter
+import com.github.kaiba78987.kaibachess.domain.common.Color
+import com.github.kaiba78987.kaibachess.domain.common.movement.Move
+import com.github.kaiba78987.kaibachess.domain.common.position.Position
+import com.github.kaiba78987.kaibachess.domain.common.position.FENReader
+import com.github.kaiba78987.kaibachess.domain.common.position.FenWritter
 
 final case class Piece private(private val strategy: PieceStrategy, val color: Color):
 

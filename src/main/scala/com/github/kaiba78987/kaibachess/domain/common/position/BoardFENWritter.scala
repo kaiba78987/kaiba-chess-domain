@@ -1,9 +1,9 @@
-package com.ebastonblanco.chess.domain.common.position
+package com.github.kaiba78987.kaibachess.domain.common.position
 
-import com.ebastonblanco.chess.domain.common.Rank
-import com.ebastonblanco.chess.domain.common.File
-import com.ebastonblanco.chess.domain.common.Coordinate
-import com.ebastonblanco.chess.domain.common.pieces.Piece
+import com.github.kaiba78987.kaibachess.domain.common.Rank
+import com.github.kaiba78987.kaibachess.domain.common.File
+import com.github.kaiba78987.kaibachess.domain.common.Coordinate
+import com.github.kaiba78987.kaibachess.domain.common.pieces.Piece
 
 object BoardFENWritter extends FenWritter[Board]:
 

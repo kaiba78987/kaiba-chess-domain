@@ -1,4 +1,4 @@
-package com.ebastonblanco.chess.domain.common
+package com.github.kaiba78987.kaibachess.domain.common
 
 enum File(val representation: Char) extends Enum[File] with NavigableEnum[File]:
   case A extends File('a')

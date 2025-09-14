@@ -1,6 +1,6 @@
-package com.ebastonblanco.chess.domain.common
+package com.github.kaiba78987.kaibachess.domain.common
 
-final case class Coordinate(file: File, rank: Rank):
+  final case class Coordinate(file: File, rank: Rank):
 
   override def toString = s"${file.representation}${rank.representation}"
 

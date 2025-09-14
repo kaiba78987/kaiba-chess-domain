@@ -1,4 +1,4 @@
-package   com.ebastonblanco.chess.domain.common
+package   com.github.kaiba78987.kaibachess.domain.common
 
 trait NavigableEnum[E <: Enum[E]]:
 

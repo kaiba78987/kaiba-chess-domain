@@ -1,4 +1,4 @@
-package com.ebastonblanco.chess.domain.common
+package com.github.kaiba78987.kaibachess.domain.common
 
 enum Rank(val representation: Char) extends Enum[Rank] with NavigableEnum[Rank]:
   case Rank1 extends Rank('1')

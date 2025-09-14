@@ -1,4 +1,4 @@
-package com.ebastonblanco.chess.domain.common.position
+package com.github.kaiba78987.kaibachess.domain.common.position
 
 import munit.FunSuite
 

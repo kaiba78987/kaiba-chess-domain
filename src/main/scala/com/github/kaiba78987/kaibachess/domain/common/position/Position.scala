@@ -1,7 +1,7 @@
-package com.ebastonblanco.chess.domain.common.position
+package com.github.kaiba78987.kaibachess.domain.common.position
 
-import com.ebastonblanco.chess.domain.common.Color
-import com.ebastonblanco.chess.domain.common.Coordinate
+import com.github.kaiba78987.kaibachess.domain.common.Color
+import com.github.kaiba78987.kaibachess.domain.common.Coordinate
 
 final case class Position(board: Board, activeSide: Color, castlingAvailability: CastlingAvailability, enPassantTarget: Option[Coordinate], halfmoveClock: Int, fullmoveNumber: Int)
 
