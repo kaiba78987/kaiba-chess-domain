@@ -3,6 +3,7 @@ val scala3Version = "3.7.2"
 lazy val root = project
   .in(file("."))
   .settings(
+    organization := "com.github.kaiba78987",
     name := "kaiba-chess-domain",
     version := "1.0.0",
     scalaVersion := scala3Version,
