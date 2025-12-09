@@ -5,8 +5,9 @@ lazy val root = project
   .settings(
     name := "kaiba-chess-domain",
     version := "0.1.0-SNAPSHOT",
-
     scalaVersion := scala3Version,
-
+    licenses := Seq(
+      "Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")
+    ),
     libraryDependencies += "org.scalameta" %% "munit" % "1.0.0" % Test
   )
