@@ -9,8 +9,25 @@ trait Board:
 
   def apply(coordinate: Coordinate): Option[Piece]
 
-  def update(coordinate: Coordinate, piece: Option[Piece]): Board
+  def set(coordinate: Coordinate, piece: Piece): Board
+
+  def remove(coordinate: Coordinate): Board
 
   def getPieces(side: Color): Set[(Coordinate, Piece)]
 
   def getPieces(side: Color, pieceType: PieceType): Set[(Coordinate, Piece)]
+
+  def getPiece(coordinate: Coordinate): Option[Piece]
+
+trait BoardFactory:
+  def empty: Board
+  def apply(pieces: Map[Coordinate, Piece]): Board
+
+object BoardFactory:
+  given BoardFactory = PieceMapBoard
+
+object Board:
+  def empty(using factory: BoardFactory): Board = factory.empty
+  def apply(pieces: Map[Coordinate, Piece])(using
+      factory: BoardFactory
+  ): Board = factory(pieces)
